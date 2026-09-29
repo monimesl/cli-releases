@@ -19,3 +19,22 @@ directory:
 ```sh
 curl -fsSL https://cli.monime.io/install.sh | MONIME_VERSION=1.2.3 MONIME_INSTALL_DIR="$HOME/.local/bin" sh
 ```
+
+**Windows** (PowerShell)
+
+```powershell
+irm https://cli.monime.io/install.ps1 | iex
+```
+
+It installs `monime.exe` to `%LOCALAPPDATA%\Programs\monime`, after checking
+its checksum, and adds that folder to your user `PATH`. To pick a version or a
+directory:
+
+```powershell
+$env:MONIME_VERSION = "1.2.3"; $env:MONIME_INSTALL_DIR = "C:\tools\monime"; irm https://cli.monime.io/install.ps1 | iex
+```
+
+Or download the zip for your platform from the
+[latest release](https://github.com/monimesl/cli-releases/releases/latest),
+extract it and put `monime.exe` on your `PATH`. Each release lists SHA-256
+checksums in `monime_<version>_checksums.txt`.
